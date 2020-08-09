@@ -30,7 +30,7 @@ export default {
   */
   webfontloader: {
     google: {
-      families: ['Lato:400,700'] //Loads Lato font with weights 400 and 700
+      families: ['Overlock:100,200,300,400,500,600,700,800', 'Nunito:100,200,300,400,500,600,700,800']
     }
   },
   /*
@@ -44,8 +44,11 @@ export default {
   */
   styleResources: {
     scss: [
-      '@/assets/styles/variables/_colors.scss'
-    ],
+      '@/assets/styles/variables/_colors.scss',
+      '@/assets/styles/variables/_responsive.scss',
+      '@/assets/styles/variables/_fonts.scss',
+      '@/assets/styles/variables/_typography.scss'
+    ]
   },
   /*
   ** Plugins to load before mounting the App
