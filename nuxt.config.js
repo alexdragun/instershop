@@ -26,10 +26,27 @@ export default {
     ]
   },
   /*
+  ** Define fonts here
+  */
+  webfontloader: {
+    google: {
+      families: ['Lato:400,700'] //Loads Lato font with weights 400 and 700
+    }
+  },
+  /*
   ** Global CSS
   */
   css: [
+    '@/assets/styles.scss'
   ],
+  /*
+  ** Global Styles
+  */
+  styleResources: {
+    scss: [
+      '@/assets/styles/variables/_colors.scss'
+    ],
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
@@ -50,6 +67,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    // Doc: https://www.npmjs.com/package/@nuxtjs/style-resources
+    '@nuxtjs/style-resources',
+    // Doc: https://www.npmjs.com/package/nuxt-webfontloader
+    'nuxt-webfontloader'
   ],
   /*
   ** Build configuration
