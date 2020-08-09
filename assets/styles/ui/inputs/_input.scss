@@ -1,0 +1,22 @@
+.search {
+  margin: 0;
+  padding: 10px 40px 10px 0;
+  width: calc(100% - 40px);
+  outline: none;
+  border: none;
+  border-bottom: 2px solid $primary_color;
+  background: transparent;
+  color: $secondary_color;
+  &-icon {
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    color: $primary_color;
+  }
+}
