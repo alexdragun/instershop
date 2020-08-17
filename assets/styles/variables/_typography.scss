@@ -1,3 +1,9 @@
+h1, h2, h3, h4, h5, p {
+  &::selection {
+    background-color: $primary_color;
+    color: $black;
+  }
+}
 h1 {
   margin: 0;
   font-size: 56px;

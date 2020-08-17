@@ -3,7 +3,7 @@
     <div class="nav-up">
       <div class="nav-up__inner">
         <div class="width">
-          <h4 style="color: #ffffff">Logo</h4>
+          <img src="~/static/images/logo.svg" alt="logo">
         </div>
         <div class="width flex align-center">
           <div
@@ -61,14 +61,14 @@
         width: 100%;
         max-width: 1300px;
         .width {
-          width: calc(60% - 20px);
+          width: calc(50% - 20px);
           margin: 0 15px;
           &:first-child {
-            width: calc(20% - 20px);
+            width: calc(25% - 20px);
             margin-left: 0;
           }
           &:last-child {
-            width: calc(20% - 20px);
+            width: calc(25% - 20px);
             margin-right: 0;
           }
         }
