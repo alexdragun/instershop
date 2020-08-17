@@ -36,13 +36,14 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  height: 100vh;
+  margin-top: 54px;
+  height: calc(100vh - 111px);
   .image {
     &-cover {
-      padding-top: 80px;
+      padding-top: 40px;
       display: block;
       width: 100%;
-      height: calc(100% - 80px);
+      height: calc(100% - 40px);
     }
     &-overlay {
       position: absolute;
@@ -65,6 +66,7 @@ export default {
       position: relative;
       margin-bottom: 10px;
       color: $secondary_color;
+      font-family: $font_overlock;
       &:before {
         content: '';
         pointer-events: none;
@@ -80,7 +82,6 @@ export default {
     h4 {
       margin-bottom: 40px;
       color: $secondary_color;
-      font-family: $font_nunito;
     }
   }
 }

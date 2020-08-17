@@ -61,6 +61,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '@/plugins/global-mixins.js' }
   ],
   /*
   ** Auto import components
