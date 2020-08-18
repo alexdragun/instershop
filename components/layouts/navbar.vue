@@ -251,7 +251,7 @@ export default {
         {
           id: 4,
           categoryName: 'Akcija',
-          categoryLink: '/akcija',
+          categoryLink: '',
           subCategory: []
         }
       ]
