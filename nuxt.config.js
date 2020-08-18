@@ -1,6 +1,6 @@
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/instershop/'
+    base: '/'
   }
 } : {}
 
@@ -66,6 +66,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '@/plugins/project-plugins.js' },
     { src: '@/plugins/global-mixins.js' }
   ],
   /*

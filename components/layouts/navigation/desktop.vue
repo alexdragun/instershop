@@ -29,13 +29,13 @@
               class="link"
               to="/login"
             >
-              Login
+              Prijava
             </nuxt-link>
             <nuxt-link
               class="link"
               to="/register"
             >
-              Register
+              Registracija
             </nuxt-link>
             <i class="fas fa-shopping-cart" />
           </div>
@@ -206,12 +206,18 @@ export default {
               opacity: 1;
             }
           }
+          &.nuxt-link-active {
+            &:after {
+              width: 100%;
+              opacity: 1;
+            }
+          }
         }
         .fa-shopping-cart {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-left: 30px;
+          margin-left: 20px;
           background-color: transparent;
           width: 35px;
           height: 35px;
