@@ -25,7 +25,7 @@
 export default {
   data () {
     return {
-      title: 'WELCOME TO WEBSHOP',
+      title: 'WELCOME TO INSTERSHOP',
       subtitle: 'Check our shop',
       linkName: 'Go to shop',
       link: '/'
@@ -51,7 +51,7 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
   .container {
@@ -65,7 +65,7 @@ export default {
     h1 {
       position: relative;
       margin-bottom: 10px;
-      color: $secondary_color;
+      color: $primary_color;
       font-family: $font_overlock;
       &:before {
         content: '';
@@ -81,7 +81,7 @@ export default {
     }
     h4 {
       margin-bottom: 40px;
-      color: $secondary_color;
+      color: $primary_color;
     }
   }
 }

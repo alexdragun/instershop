@@ -4,7 +4,7 @@
   width: calc(100% - 40px);
   outline: none;
   border: none;
-  border-bottom: 2px solid $primary_color;
+  border-bottom: 2px solid $secondary_color;
   background: transparent;
   color: $secondary_color;
   &-icon {
@@ -17,6 +17,6 @@
     width: 40px;
     border: none;
     background-color: transparent;
-    color: $primary_color;
+    color: $secondary_color;
   }
 }

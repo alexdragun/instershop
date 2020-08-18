@@ -9,9 +9,9 @@
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  background-color: $primary_color;
+  background-color: $secondary_color;
   border-radius: 30px;
-  color: $secondary_color;
+  color: $primary_color;
   font-size: 18px;
   font-family: $font_nunito;
   transition: 0.5s ease-out;
@@ -21,14 +21,14 @@
     content: '';
     width: 200%;
     height: 500%;
-    background-color: $secondary_color;
+    background-color: $primary_color;
     position: absolute;
     transform: rotate(30deg) translateX(-400px);
     transition: 0.5s ease-out;
     z-index: 1;
   }
   &:hover {
-    color: $primary_color;
+    color: $secondary_color;
     &:before {
       transform:translateX(0);
     }
@@ -36,5 +36,9 @@
   span {
     position: relative;
     z-index: 2;
+  }
+  @include mobile {
+    font-size: 16px;
+    padding: 8px 15px;
   }
 }

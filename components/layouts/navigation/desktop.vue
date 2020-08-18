@@ -4,7 +4,9 @@
     <div class="nav-up">
       <div class="nav-up__inner">
         <div class="width">
-          <img src="~/static/images/logo.svg" alt="logo">
+          <nuxt-link to="/">
+            <img src="~/static/images/logo.svg" alt="logo">
+          </nuxt-link>
         </div>
         <div class="width flex align-center">
           <div
@@ -53,7 +55,10 @@
               :key="categories.id"
               @mouseover="onSelectSingleProduct(categories.subCategory)"
             >
-              <nuxt-link to="/">
+              <nuxt-link
+                v-if="categories.categoryLink && categories.categoryName"
+                :to="categories.categoryLink"
+              >
                 {{ categories.categoryName }}
               </nuxt-link>
             </li>
@@ -61,15 +66,27 @@
         </div>
       </div>
       <!-- CATEGORY LIST MENU -->
-      <transition name="fade">
-        <div v-if="selectedProduct.length > 0" class="category-menu">
+      <transition name="slide-fade">
+        <div
+          v-if="selectedProduct.length > 0"
+          class="category-menu"
+          :class="{ 'category-menu--offset' : offset }"
+        >
           <div class="category-menu__inner">
-            <div class="category-menu__inner-padding" @mouseleave="onSelectSingleProduct">
-              <div v-for="subCategories in selectedProduct" :key="subCategories.id" class="category-menu__inner-width">
+            <div
+              class="category-menu__inner-padding"
+              @mouseleave="onSelectSingleProduct"
+            >
+              <div
+                v-for="subCategories in selectedProduct"
+                :key="subCategories.id"
+                class="category-menu__inner-width"
+              >
                 <div>
                   <nuxt-link
+                    v-if="subCategories.subCategoryLink && subCategories.subCategoryName"
                     class="main-link"
-                    to="/"
+                    :to="subCategories.subCategoryLink"
                   >
                     {{ subCategories.subCategoryName }}
                   </nuxt-link>
@@ -80,8 +97,9 @@
                   class="category-menu__inner-subCategories"
                 >
                   <nuxt-link
+                    v-if="subCategoriesList.listLink && subCategoriesList.listName"
                     class="sub-link"
-                    to="/"
+                    :to="subCategoriesList.listLink"
                   >
                     {{ subCategoriesList.listName }}
                   </nuxt-link>
@@ -130,16 +148,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
+  .slide-fade-enter-active {
+    transition: all .3s ease;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .slide-fade-leave-active {
+    transition: all .3s;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateY(30px);
     opacity: 0;
   }
   .nav {
     &-up {
       padding: 10px 20px;
-      background-color: $black;
+      background-color: $primary_color;
       &__inner {
         display: flex;
         align-items: center;
@@ -174,7 +197,7 @@ export default {
             opacity: 0;
             width: 0;
             height: 2px;
-            background-color: $primary_color;
+            background-color: $secondary_color;
             transition: 0.5s;
           }
           &:hover {
@@ -185,30 +208,39 @@ export default {
           }
         }
         .fa-shopping-cart {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           margin-left: 30px;
+          background-color: transparent;
+          width: 35px;
+          height: 35px;
           cursor: pointer;
           color: $secondary_color;
           font-size: 18px;
-          transition: 0.3s;
+          border-radius: 40px;
+          transition: 0.5s ease;
           &:hover {
             color: $primary_color;
+            background-color: $secondary_color;
           }
         }
       }
     }
     &-down {
-      background-color: $primary_color;
+      background-color: $secondary_color;
       z-index: 1030;
       position: absolute;
       top: 57px;
       left: 0;
       right: 0;
+      box-shadow: 0 0 10px 0 rgba(25,25,25,0.1);
       &__offset {
         position: fixed;
         top: 0;
       }
       &__inner {
-        padding: 15px 20px;
+        padding: 0 20px;
         ul {
           padding: 0;
           margin: 0;
@@ -218,6 +250,7 @@ export default {
           justify-content: center;
           li {
             margin: 0 10px;
+            padding: 15px 0;
             &:first-child {
               margin-left: 0;
             }
@@ -228,11 +261,14 @@ export default {
               text-transform: uppercase;
               text-decoration: none;
               font-size: 18px;
-              color: $black;
+              color: $primary_color;
               transition: 0.3s;
               @include fontSemiBold;
               &:hover {
-                color: $secondary_color;
+                text-shadow: 0 0 1px $primary_color;
+              }
+              &.nuxt-link-active {
+                text-shadow: 0 0 1px $primary_color;
               }
             }
           }
@@ -248,13 +284,18 @@ export default {
     right: 0;
     bottom: 0;
     z-index: 1030;
-    background-color: rgba(0, 0, 0, 0.2);
-    height: calc(100vh - 111px);
+    height: calc(100vh - 141px);
+    &--offset {
+      position: fixed;
+      top: 54px;
+      height: calc(100vh - 94px);
+    }
     &__inner {
       margin: 0 auto;
       width: 100%;
       max-width: 1300px;
-      background-color: $black;
+      background-color: $secondary_color;
+      box-shadow: 0 5px 5px 0 rgba(25,25,25,0.1);
       &-padding {
         padding: 20px 40px;
         display: flex;
@@ -264,7 +305,7 @@ export default {
           width: fit-content;
           display: block;
           text-decoration: none;
-          color: $secondary_color;
+          color: $primary_color;
           transition: 0.3s;
           &.main-link {
             margin-bottom: 15px;
@@ -285,12 +326,21 @@ export default {
                 opacity: 1;
               }
             }
+            &.nuxt-link-active {
+              &:after {
+                width: 100%;
+                opacity: 1;
+              }
+            }
           }
           &.sub-link {
             font-size: 16px;
             margin-bottom: 5px;
             &:hover {
-              color: $primary_color;
+              text-shadow: 0 0 1px $primary_color;
+            }
+            &.nuxt-link-active {
+              text-shadow: 0 0 1px $primary_color;
             }
           }
         }
