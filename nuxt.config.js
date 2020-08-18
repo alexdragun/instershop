@@ -1,3 +1,8 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/instershop/'
+  }
+} : {}
 
 export default {
   /*
@@ -86,6 +91,9 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
+  ...routerBase,
   build: {
+    extend (config, ctx) {
+    }
   }
 }

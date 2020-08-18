@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "generate": "nuxt build --target static && nuxt export",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "export": "nuxt export",
+    "serve": "nuxt serve"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
@@ -17,6 +20,7 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "eslint": "^7.6.0",
     "node-sass": "^4.14.1",
+    "push-dir": "^0.4.1",
     "sass-loader": "^9.0.3"
   }
 }
