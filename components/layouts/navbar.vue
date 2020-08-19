@@ -22,6 +22,12 @@ export default {
       category: [
         {
           id: 1,
+          categoryName: 'Sve',
+          categoryLink: '/shop',
+          subCategory: []
+        },
+        {
+          id: 2,
           categoryName: 'Žene',
           categoryLink: '/shop/zene',
           subCategory: [
@@ -102,7 +108,7 @@ export default {
           ]
         },
         {
-          id: 2,
+          id: 3,
           categoryName: 'Muškarci',
           categoryLink: '/shop/muskarci',
           subCategory: [
@@ -168,7 +174,7 @@ export default {
           ]
         },
         {
-          id: 3,
+          id: 4,
           categoryName: 'Djeca',
           categoryLink: '/shop/djeca',
           subCategory: [
@@ -249,7 +255,7 @@ export default {
           ]
         },
         {
-          id: 4,
+          id: 5,
           categoryName: 'Akcija',
           categoryLink: '',
           subCategory: []

@@ -1,6 +1,10 @@
 <template>
-  <div style="margin-top: 100px;">
-    {{ $route.params }}
+  <div class="wrapper">
+    <div class="container">
+      {{this.$route.path}}
+      <sidebar />
+      <product />
+    </div>
   </div>
 </template>
 
@@ -13,3 +17,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.wrapper {
+  margin-top: 54px;
+  .container {
+    padding-top: 20px;
+  }
+}
+</style>
