@@ -151,6 +151,13 @@ export default {
   min-width: 250px;
   max-width: 250px;
   margin-right: 40px;
+  @include tablet {
+    width: 100%;
+    max-width: initial;
+    min-width: initial;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
   &__inner {
     .category-title {
       padding-bottom: 10px;

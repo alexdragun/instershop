@@ -44,6 +44,23 @@
     padding: 8px 15px;
   }
 }
+.addCart {
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  background-color: $primary_color;
+  color: $secondary_color;
+  border: thin solid $primary_color;
+  padding: 10px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  @include fontSemiBold;
+  &:hover {
+    background-color: $secondary_color;
+    color: $primary_color;
+  }
+}
 .category {
   &-link {
     text-decoration: none;

@@ -2,7 +2,9 @@
   <div class="wrapper">
     <div class="container">
       <sidebar />
-      <product />
+      <div style="width: 100%;">
+        <product />
+      </div>
     </div>
   </div>
 </template>
@@ -20,9 +22,13 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   margin-top: 54px;
+  margin-bottom: 60px;
   .container {
     padding-top: 40px;
     display: flex;
+    @include tablet {
+      flex-direction: column;
+    }
   }
 }
 </style>
