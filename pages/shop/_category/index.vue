@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <div class="container">
-      {{this.$route.path}}
       <sidebar />
       <product />
     </div>
@@ -22,7 +21,8 @@ export default {
 .wrapper {
   margin-top: 54px;
   .container {
-    padding-top: 20px;
+    padding-top: 40px;
+    display: flex;
   }
 }
 </style>
