@@ -86,39 +86,43 @@
                   'product-container__five' : showFive}"
       >
         <div class="positionRelative product-box">
-          <nuxt-link
-            to="/"
+          <div
             class="positionRelative product-box__inner"
             style="overflow: hidden;"
           >
-            <img
-              v-if="index === 0"
-              class="product-image"
-              src="~/static/images/products/jeans.png"
-              alt="jeans"
-            >
-            <img
-              v-else-if="index === 1"
-              class="product-image"
-              src="~/static/images/products/shirt.png"
-              alt="shirt"
-            >
-            <img
-              v-else
-              class="product-image"
-              src="~/static/images/products/shoes.png"
-              alt="shoes"
-            >
+            <nuxt-link class="product-link" to="/">
+              <img
+                v-if="index === 0"
+                class="product-image"
+                src="~/static/images/products/jeans.png"
+                alt="jeans"
+              >
+              <img
+                v-else-if="index === 1"
+                class="product-image"
+                src="~/static/images/products/shirt.png"
+                alt="shirt"
+              >
+              <img
+                v-else
+                class="product-image"
+                src="~/static/images/products/shoes.png"
+                alt="shoes"
+              >
+            </nuxt-link>
             <div class="wishlist">
               <i class="fas fa-heart" />
             </div>
-            <button class="addCart">
+            <button class="addCart absolute desktop">
               Add to cart
             </button>
-          </nuxt-link>
+          </div>
           <div class="product-box__text">
             <p>MY FIRST PRODUCT</p>
             <span class="price">70,00 HRK</span>
+            <button class="addCart mobile">
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
@@ -510,17 +514,24 @@ export default {
   }
   .product-box {
     &__inner {
-      display: block;
-      cursor: pointer;
-      text-decoration: none;
       color: $primary_color;
       &:hover {
         .product-image {
           filter: blur(3px);
+          @include tablet {
+            filter: none;
+          }
         }
         .addCart {
-          transform: translateY(0px);
+          &.absolute {
+            transform: translateY(0px);
+          }
         }
+      }
+      .product-link {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
       }
     }
     &__text {
@@ -572,13 +583,27 @@ export default {
       }
     }
     .addCart {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      transform: translateY(50px);
-      transition: 0.3s ease;
+      &.absolute {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        transform: translateY(50px);
+        transition: 0.3s ease;
+      }
+      &.desktop {
+        @include tablet {
+          display: none;
+        }
+      }
+      &.mobile {
+        display: none;
+        margin-top: 20px;
+        @include tablet {
+          display: block;
+        }
+      }
     }
   }
 }

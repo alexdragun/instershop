@@ -259,6 +259,14 @@ export default {
             padding: 15px 0;
             &:first-child {
               margin-left: 0;
+              a {
+                &.nuxt-link-active {
+                  text-shadow: none
+                }
+                &.nuxt-link-exact-active {
+                  text-shadow: 0 0 1px $primary_color;
+                }
+              }
             }
             &:last-child {
               margin-right: 0;

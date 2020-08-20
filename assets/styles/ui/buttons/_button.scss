@@ -70,6 +70,9 @@
     &:hover {
       text-shadow: 0 0 1px $primary_color;
     }
+    &.nuxt-link-active {
+      text-shadow: 0 0 1px $primary_color;
+    }
   }
   &-expand {
     cursor: pointer;
@@ -116,6 +119,9 @@
           color: $light_grey;
           text-shadow: none;
           font-size: 14px;
+        }
+        &.nuxt-link-active {
+          text-shadow: 0 0 1px $primary_color;
         }
       }
     }
