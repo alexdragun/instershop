@@ -38,6 +38,10 @@ export default {
 .wrapper {
   margin-top: 54px;
   height: calc(100vh - 111px);
+  @include tablet {
+    margin-top: 56px;
+    height: calc(100vh - 56px);
+  }
   .image {
     &-cover {
       padding-top: 40px;

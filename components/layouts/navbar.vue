@@ -4,7 +4,7 @@
       <desktopNavigation :category="category" />
     </div>
     <div class="responsive-navigation">
-      <responsiveNavigation />
+      <responsiveNavigation :category="category" />
     </div>
   </div>
 </template>
