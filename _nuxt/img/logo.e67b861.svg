@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="129" height="30" viewBox="0 0 129 30">
+  <g id="Group_1" data-name="Group 1" transform="translate(-153 29)">
+    <line id="Line_1" data-name="Line 1" x2="30" transform="translate(153.5 -28.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_2" data-name="Line 2" y2="30" transform="translate(153.5 -29)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x2="30" transform="translate(153.5 0.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(169 -25.35) rotate(45)" fill="#fff" stroke="#fff" stroke-width="1">
+      <rect width="16" height="16" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="15" height="15" rx="0.5" fill="none"/>
+    </g>
+    <text id="InsterShop" transform="translate(185 -6)" fill="#fff" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">InsterShop</tspan></text>
+  </g>
+</svg>
